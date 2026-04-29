@@ -32,9 +32,3 @@ document.querySelectorAll("[data-scroll-link]").forEach((link) => {
     history.pushState(null, "", hash);
   });
 });
-
-window.addEventListener("load", () => {
-  if (document.body.dataset.page === "home" && window.location.hash) {
-    centerScrollToHash(window.location.hash);
-  }
-});
