@@ -103,7 +103,7 @@ h3 {
   align-items: center;
   gap: 1.1rem;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 12px;
 }
 
 .site-nav a:hover,
@@ -136,10 +136,11 @@ h3 {
 }
 
 .nav-button {
-  padding: 0.7rem 1rem;
+  padding: 0.5rem 0.8rem;
   background: #fe7f2d;
   color: #171c2d;
-  border-radius: 0.95rem;
+  border-radius: 0.9rem;
+  font-size: 12px;
 }
 
 .nav-button:hover,
@@ -172,7 +173,7 @@ h1 {
   margin-bottom: 1.25rem;
   font-size: 1.08rem;
   font-weight: 600;
-  color: #171c2d;
+  color: #f4efe6;
 }
 
 .hero-body {
@@ -190,16 +191,16 @@ h1 {
   justify-self: end;
   width: min(100%, 420px);
   padding: 0.9rem;
-  background: #171c2d;
+  background: #f4efe6;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.9rem;
 }
 
 
 .hero-photo img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 1.1rem;
+  border-radius: 0.9rem;
 }
 
 .section {
@@ -300,13 +301,13 @@ h2 {
 }
 
 .tool-icon {
-  fill: #171c2d;
+  fill: var(--text);
   width: 32px;
   height: 32px;
 }
 
-.tool-icon--clickup {
-  fill: #171c2d;
+.tool-icon.tool-icon--clickup {
+  fill: var(--text);
 }
 
 .section-combined {
@@ -426,18 +427,17 @@ h2 {
 }
 
 .contact-form {
-  max-width: 900px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
   padding: 32px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(254,127,45,0.4);
   border-radius: 8px;
-  color: #171c2d;
 }
 
 .contact-form span {
   font-size: 0.92rem;
-  color: var(--ink-muted);
 }
 
 .contact-form input,
@@ -785,21 +785,24 @@ h2 {
 
 .scroll-indicator {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
   position: absolute;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  animation: bounce 2s infinite;
   color: rgba(244,239,230,0.4);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+.mouse-icon {
+  stroke: rgba(244,239,230,0.4);
+}
+
+.mouse-wheel {
+  animation: wheel-bounce 2s infinite;
+}
+
+@keyframes wheel-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
 }
