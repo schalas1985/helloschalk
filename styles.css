@@ -196,16 +196,6 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.hero-photo::before {
-  content: "";
-  position: absolute;
-  inset: -1rem -1rem auto auto;
-  width: 7.5rem;
-  height: 8.6rem;
-  background: url("assets/honeycomb.svg") center / contain no-repeat;
-  opacity: 0.22;
-  pointer-events: none;
-}
 
 .hero-photo img {
   aspect-ratio: 4 / 5;
@@ -290,49 +280,35 @@ h2 {
   margin-bottom: 0;
 }
 
-.tool-rail {
-  display: grid;
-  grid-template-columns: repeat(6, 98px);
-  justify-content: center;
-  align-items: center;
-  gap: 0.72rem 0.24rem;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0.4rem 0 0.2rem;
-}
-
-.tool-hex {
-  flex: 0 0 auto;
+.tools-grid {
   display: flex;
-  position: relative;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
   justify-content: center;
-  width: 98px;
-  height: 110px;
-  transition: transform 160ms ease;
+  align-items: flex-start;
 }
 
-.tool-hex::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("assets/rounded-hex-light.svg") center / contain no-repeat;
-  filter: drop-shadow(0 14px 22px rgba(3, 6, 14, 0.18));
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.tool-hex img {
-  position: relative;
-  z-index: 1;
-  width: 31px;
-  height: 31px;
+.tool-item span {
+  font-size: 0.75rem;
+  color: #888888;
+  font-weight: 500;
 }
 
-.tool-hex:nth-child(odd) {
-  transform: translateY(-12px);
+.tool-icon {
+  fill: #F9F9F7;
+  width: 32px;
+  height: 32px;
 }
 
-.tool-hex:nth-child(even) {
-  transform: translateY(12px);
+.tool-icon--clickup {
+  fill: #F9F9F7;
 }
 
 .section-combined {
@@ -341,6 +317,9 @@ h2 {
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding: 80px 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .combined-shell {
@@ -361,58 +340,26 @@ h2 {
   margin: 0;
 }
 
-.combined-honeycomb {
-  position: absolute;
-  right: clamp(2rem, 8vw, 8rem);
-  top: 50%;
-  width: 180px;
-  height: 180px;
-  background: url("assets/honeycomb.svg") center / contain no-repeat;
-  opacity: 0.24;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
 
 .skills-row {
-  display: grid;
-  grid-template-columns: repeat(6, 98px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   justify-content: center;
   align-items: center;
-  gap: 0.72rem 0.24rem;
-  width: fit-content;
-  margin: 0 auto;
 }
 
 .skill-hex {
-  display: flex;
-  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 98px;
-  height: 110px;
-  padding: 0.75rem;
+  padding: 8px 16px;
   color: #222842;
   text-align: center;
-  font-size: 0.72rem;
-  line-height: 1.15;
-  isolation: isolate;
-  justify-self: center;
-}
-
-.skill-hex:nth-child(odd) {
-  transform: translateY(-12px);
-}
-
-.skill-hex:nth-child(even) {
-  transform: translateY(12px);
-}
-
-.skill-hex::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("assets/rounded-hex-light.svg") center / 100% 100% no-repeat;
-  z-index: -1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: #F0EFF8;
+  border-radius: 999px;
 }
 
 .project-grid {
@@ -579,7 +526,7 @@ h2 {
   text-transform: uppercase;
   background: #222842;
   border: 2px solid rgba(254, 127, 45, 0.95);
-  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+  border-radius: 8px;
 }
 
 .timeline-date::before,
@@ -708,10 +655,6 @@ h2 {
     max-width: 100%;
   }
 
-  .tool-rail {
-    grid-template-columns: repeat(3, 98px);
-    gap: 0.4rem;
-  }
 
   .section-combined {
     min-height: auto;
@@ -727,13 +670,6 @@ h2 {
     margin: 0;
   }
 
-  .combined-honeycomb {
-    width: 140px;
-    height: 140px;
-    right: 1.5rem;
-    top: 8rem;
-    transform: none;
-  }
 }
 
 @media (max-width: 760px) {
@@ -777,21 +713,7 @@ h2 {
     font-size: 0.76rem;
   }
 
-  .skill-hex:nth-child(odd),
-  .skill-hex:nth-child(even) {
-    grid-column: span 1;
-    transform: none;
-  }
-
-  .skill-hex:nth-child(1),
-  .skill-hex:nth-child(2),
-  .skill-hex:nth-child(3),
-  .skill-hex:nth-child(4),
-  .skill-hex:nth-child(5),
-  .skill-hex:nth-child(6) {
-    grid-column: auto;
-  }
-
+  
   .form-row {
     grid-template-columns: 1fr;
   }
