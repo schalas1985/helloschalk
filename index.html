@@ -8,9 +8,6 @@
     content="helloschalk portfolio for Schalk Burger van Wyk, focused on operations, systems thinking, and a transition into data analytics."
   >
   <title>helloschalk</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="home">
@@ -64,6 +61,12 @@
             height="510"
           >
         </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>scroll</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </section>
 
@@ -164,21 +167,19 @@
 
         <div class="contact-layout">
           <div class="contact-intro">
-            <p>Thank you for reviewing my profile.</p>
-            <p>I look forward to hearing from you and continuing the conversation.</p>
+            <!-- <p>Thank you for reviewing my profile.</p> -->
+            <!-- <p>I look forward to hearing from you and continuing the conversation.</p> -->
           </div>
           <form id="contact-form" class="contact-form" action="https://formspree.io/f/mzdynlkw" method="POST">
             <input type="hidden" name="_subject" value="New message from helloschalk">
-            <div class="form-row">
-              <label>
-                <span>Name</span>
-                <input type="text" name="name" placeholder="Your name">
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="you@example.com">
-              </label>
-            </div>
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name">
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com">
+            </label>
             <label>
               <span>Message</span>
               <textarea name="message" rows="6" placeholder="Write a short message"></textarea>
