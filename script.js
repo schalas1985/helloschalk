@@ -32,3 +32,34 @@ document.querySelectorAll("[data-scroll-link]").forEach((link) => {
     history.pushState(null, "", hash);
   });
 });
+
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    event.preventDefault();
+    const textToCopy = btn.getAttribute("data-copy");
+    const originalHTML = btn.innerHTML;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.classList.remove("copied");
+      }, 2000);
+    });
+  });
+});
+
+var form = document.getElementById('contact-form');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(response) {
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+  });
+});
