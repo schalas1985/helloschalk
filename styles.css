@@ -119,6 +119,45 @@ h3 {
   gap: 0.65rem;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  left: 0;
+}
+
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  top: 6px;
+}
+
 .nav-button {
   padding: 0.5rem 0.8rem;
   background: var(--accent);
@@ -843,26 +882,35 @@ h2 {
 }
 
 @media (max-width: 480px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-side {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .site-nav,
+  .nav-actions {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-side.mobile-menu-open .site-nav,
+  .nav-side.mobile-menu-open .nav-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
   .hero-grid {
     gap: 2rem;
   }
 
   .hero-photo {
     max-width: 100%;
-  }
-
-  .nav-side {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-
-  .site-nav {
-    justify-content: center;
-  }
-
-  .nav-actions {
-    justify-content: center;
   }
 
   .contact-layout {
