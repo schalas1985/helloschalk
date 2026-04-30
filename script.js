@@ -63,3 +63,10 @@ form.addEventListener('submit', function(e) {
     }
   });
 });
+
+document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
+  toggle.addEventListener('click', function() {
+    const navSide = this.closest('.nav-side');
+    navSide.classList.toggle('mobile-menu-open');
+  });
+});
