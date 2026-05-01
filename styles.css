@@ -889,7 +889,7 @@ h2 {
   .nav-side {
     flex-direction: column;
     align-items: flex-end;
-    position: relative;
+    gap: 0.5rem;
   }
 
   .site-nav,
@@ -903,23 +903,15 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 0.8rem;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: rgba(23, 28, 45, 0.98);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(254, 127, 45, 0.3);
-    z-index: 1000;
-    margin-top: 0.5rem;
+    gap: 0.5rem;
   }
 
   .nav-side.mobile-menu-open .site-nav a,
   .nav-side.mobile-menu-open .nav-actions a {
     padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(23, 28, 45, 0.98);
     border-radius: 6px;
+    border: 1px solid rgba(254, 127, 45, 0.3);
   }
 
   .hero-grid {
