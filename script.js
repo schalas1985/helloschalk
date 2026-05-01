@@ -70,3 +70,10 @@ document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
     navSide.classList.toggle('mobile-menu-open');
   });
 });
+
+document.querySelectorAll('.site-nav a, .nav-actions a').forEach((link) => {
+  link.addEventListener('click', function() {
+    const navSide = this.closest('.nav-side');
+    navSide.classList.remove('mobile-menu-open');
+  });
+});
